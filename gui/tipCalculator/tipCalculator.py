@@ -57,6 +57,11 @@ class tipCalculator(Tkinter.Tk):
     
     # Set resizing
     self.grid_columnconfigure((0,1),weight=1)
+    self.screenwidth = self.winfo_screenwidth()
+    self.screenheight = self.winfo_screenheight()
+    self.winwidth = self.winfo_reqwidth()
+    self.winheight = self.winfo_reqheight()
+    self.geometry('+%d+%d' % (self.screenwidth/2-self.winwidth/2,self.screenheight/2-self.winheight/2) )
 
   def calculate(self):
     self.tipPercentage = self.tipDropdownVariable.get()
